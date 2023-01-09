@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  max-width: 100%;
+  gap: 2rem;
+  input[type="text"] {
+    width: 100%;
+  }
+  input[type="button"] {
+    width: 200px;
+    background-color: blue;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+  }
+}
