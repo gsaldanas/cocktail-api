@@ -3,7 +3,7 @@ import "../css/style.scss";
 import axios from "axios";
 document.querySelector("form").onsubmit = async (e) => {
   e.preventDefault();
-  const value = document.querySelector("form input[type=text]").value;
+  const { value } = document.querySelector("form input[type=text]");
   console.log(value);
   if (value.length >= 2) {
     const response = await axios(
@@ -12,10 +12,10 @@ document.querySelector("form").onsubmit = async (e) => {
     if (response.data) {
       document.querySelector("section").innerHTML = response.data.drinks
         .map(
-          (drink) => `
+          ({ strDrink, strDrinkThumb }) => `
         <aside>
-            <h2>${drink.strDrink}.</h2>
-            <img src="${drink.strDrinkThumb}" alt="" />
+            <h2>${strDrink}.</h2>
+            <img src="${strDrinkThumb}" alt="" />
         </aside>
         `
         )
