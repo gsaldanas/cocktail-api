@@ -13,3 +13,11 @@ form {
     cursor: pointer;
   }
 }
+section {
+  justify-content: space-between;
+  margin: 2rem 0;
+  aside {
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+}
