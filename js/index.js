@@ -9,6 +9,17 @@ document.querySelector("form").onsubmit = async (e) => {
     const response = await axios(
       `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${value}`
     );
-    console.log(response.data);
+    if (response.data) {
+      document.querySelector("section").innerHTML = response.data.drinks
+        .map(
+          (drink) => `
+        <aside>
+            <h2>${drink.strDrink}.</h2>
+            <img src="${drink.strDrinkThumb}" alt="" />
+        </aside>
+        `
+        )
+        .join("");
+    }
   }
 };
